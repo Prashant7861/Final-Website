@@ -83,12 +83,12 @@ function closeVideoModal() {
     const player = document.getElementById("popupPlayer");
 
     modal.style.display = "none";
-    player.src = ""; // stop video
+    player.src = ""; 
 }
 
         
 
-        // Scroll to section function
+       
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             const header = document.getElementById('header');
@@ -102,7 +102,7 @@ function closeVideoModal() {
             }
         }
 
-        // Initialize particles for philosophy section
+       
         function initParticles() {
             const particlesContainer = document.getElementById('particles');
             const particleCount = 15;
@@ -111,23 +111,23 @@ function closeVideoModal() {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 
-                // Random horizontal position
+               
                 particle.style.left = Math.random() * 100 + '%';
                 
-                // Start particles at random vertical positions throughout the section
+              
                 particle.style.top = Math.random() * 100 + '%';
                 
-                // Random animation delay for natural movement
+              
                 particle.style.animationDelay = Math.random() * 20 + 's';
                 
-                // Random animation duration for variety
+               
                 particle.style.animationDuration = (18 + Math.random() * 8) + 's';
                 
                 particlesContainer.appendChild(particle);
             }
         }
 
-        // Initialize carousel
+
         let currentIndex = 0;
         const carousel = document.getElementById('carousel');
         const indicatorsContainer = document.getElementById('indicators');
@@ -159,12 +159,12 @@ function closeVideoModal() {
         }
 
         function initCarousel() {
-            // Create carousel items
+        
             portfolioData.forEach((data, index) => {
                 const item = createCarouselItem(data, index);
                 carousel.appendChild(item);
                 
-                // Create indicator
+               
                 const indicator = document.createElement('div');
                 indicator.className = 'indicator';
                 if (index === 0) indicator.classList.add('active');
@@ -184,10 +184,10 @@ function closeVideoModal() {
             const isTablet = window.innerWidth <= 1024;
             
             items.forEach((item, index) => {
-                // Calculate relative position
+                
                 let offset = index - currentIndex;
                 
-                // Wrap around for continuous rotation
+               
                 if (offset > totalItems / 2) {
                     offset -= totalItems;
                 } else if (offset < -totalItems / 2) {
@@ -197,21 +197,21 @@ function closeVideoModal() {
                 const absOffset = Math.abs(offset);
                 const sign = offset < 0 ? -1 : 1;
                 
-                // Reset transform
+               
                 item.style.transform = '';
                 item.style.opacity = '';
                 item.style.zIndex = '';
                 item.style.transition = 'all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1)';
                 
-                // Adjust spacing based on screen size
+                
                 let spacing1 = 400;
                 let spacing2 = 600;
                 let spacing3 = 750;
                 
                 if (isMobile) {
-                    spacing1 = 280;  // Was 400, now 100px closer
-                    spacing2 = 420;  // Was 600, now 180px closer
-                    spacing3 = 550;  // Was 750, now 200px closer
+                    spacing1 = 280; 
+                    spacing3 = 550;   
+                    spacing2 = 420; closer
                 } else if (isTablet) {
                     spacing1 = 340;
                     spacing2 = 520;
